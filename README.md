@@ -4,12 +4,12 @@
 <img src="https://github.com/souzomain/Shaco/assets/92044641/0576991d-0676-4587-86f0-7107c914f76d" alt="Shaco Generation" />
 </p>
 
-Shaco is a minimal C linux agent for https://github.com/HavocFramework/Havoc.
-Shaco communicate with http to the server using hardcoded socket
+Shaco is a minimal C linux Agent for the Havoc-Framework (https://github.com/HavocFramework/Havoc).
+Shaco communicate over http to the Havoc Teamserver using a hardcoded socket.
 
-# Commands
+# Commands Available
 
-This is the commands that the agent support:
+These are the commands that the agent is supporting:
 
 - shell { command }
 - upload { localfile remotefile }
@@ -23,7 +23,7 @@ This is the commands that the agent support:
 
 # Features
 
-Features of Shaco agent
+Features of the Shaco agent
 
 - Random Connect ( randomint(sleep, sleep + jitter) )
 - Random hash from http send to avoid rules
@@ -36,29 +36,35 @@ Features of Shaco agent
 
 # Running and Configuration/Compilation
 
-Clone
+1. Clone
 
 ```
 git clone --recurse-submodules https://github.com/souzomain/Shaco.git
 ```
 
-After clone this repo, you can execute the python handler
+2. Install Websocket if not existing
+
+```
+pip3 install websocket-client
+```
+
+3. After clone this repo, you can execute the python handler
 
 ```bash
 python handler.py
 ```
 
-Create a http havoc listenner
+4. Create a http havoc listener on Havoc, check out:
 
 https://havocframework.com/docs/listeners
 
-To compile this, you can use havoc payload generator in Attack -> Payload and Chose Shaco option
+5. To compile this, you can use the havoc payload generator "Attack" -> "Payload" and Chose Shaco as option
 
 https://havocframework.com/docs/agent
 
 # Issues
 
-the upload option not work if the size of file is > 7000 because http hardcoded not work with chunk, on havoc 0.6 I work on this
+The upload option don't work if the size of file is > 7000 because http is hardcoded and is not working with chunk, on havoc 0.6 I work on this
 
 # TODO
 
